@@ -1,0 +1,85 @@
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="registeration.css">
+        <title>Registration page</title>
+        <h1 class="h3">Student Enrollment Form</h1>
+    </head>
+    <body class="body">
+        <script language="JavaScript">
+            function myFunction(){
+                var message = document.getElementById("name1").value;
+                p1.innerHTML= message;
+                var message = document.getElementById("email1").value;
+                p2.innerHTML= message;
+                var ele = document.getElementsByName('Gender');
+                for(i = 0; i < ele.length; i++) {
+                    if(ele[i].checked)
+                    document.getElementById("result1").innerHTML= "Gender: "+ele[i].value;
+                }
+                const button= document.querySelector('#button');
+                var lang1= document.getElementById("java");
+                var lang2= document.getElementById("html");
+                var lang3= document.getElementById("css");
+                var result= " ";
+                var count=0;
+                if (lang1.checked == true){
+                    var lg1= document.getElementById("java").value;
+                    result=result+lg1 + " ";
+                    count+=1;
+                }
+                if (lang2.checked == true){
+                    var lg2= document.getElementById("html").value;
+                    result= result + lg2 + " ";
+                    count+=1;
+                }
+                if (lang3.checked == true){
+                    var lg3= document.getElementById("css").value;
+                    result= result + lg3 ;
+                    count+=1;
+                }
+                if(count==0) {
+                return document.getElementById("result").innerHTML= "Select any one";
+                }
+                return document.getElementById("result").innerHTML= "You have selected " + result + " language";
+            }
+        </script>
+        <table>
+            <form class="form">
+                <tr><td>Name:</td><td><input type="text" id="name1" required
+                autofocus
+                pattern="[a-zA-Z]+"
+                maxlength="15"/></td></tr>
+                <br>
+                <br>
+                <tr><td>Email:</td><td><input type="email" id="email1"/></td></tr>
+                <br>
+                <br>
+                <tr><td>Gender:</td><td><input type="radio" id="Male" name="Gender" value="Male"/>
+                <label for="Male">Male</label>
+                <input type="radio" id="Female" name="Gender" value="Female"/>
+                <label for="Female">Female</label>
+                <input type="radio" id="Other" name="Gender" value="Other"/>
+                <label for="Other">Other</label></td></tr>
+                <br>
+                <br>
+                <tr><td>Skills:</td><td>
+                <input type="checkbox" id="java" name="language" value="java">
+                <label for="java">Java</label><br>
+                <input type="checkbox" id="html" name="language" value="html">
+                <label for="html">HTML</label><br>
+                <input type="checkbox" id="css" name="language" value="css">
+                <label for="css">CSS</label><br><br>
+                <tr><td><input type="button" value="Enroll Student" onclick="myFunction()"/></td>
+                <td><input type="reset" value="Reset"/></td></tr>
+            </form>
+        </table>
+        <div>
+            <p id="p1"></p>
+            <p id="p2"></p>
+            <p id="result1"></p>
+            <p id= "result"></p>
+        </div>
+    
+    </body>
+</html>
