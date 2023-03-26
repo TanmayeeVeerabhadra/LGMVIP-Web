@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head lang="en">
         <meta charset="UTF-8">
@@ -12,10 +13,19 @@
                 p1.innerHTML= message;
                 var message = document.getElementById("email1").value;
                 p2.innerHTML= message;
+                var imageUrl = document.getElementById("imageUrl").value;
+                var image = new Image();
+                image.onload = function() {
+                    document.getElementById("imageContainer").innerHTML = "<img src='" + imageUrl + "'>";
+                }
+                image.onerror = function() {
+                    alert("Error loading image from URL");
+                }
+                image.src = imageUrl;
                 var ele = document.getElementsByName('Gender');
                 for(i = 0; i < ele.length; i++) {
                     if(ele[i].checked)
-                    document.getElementById("result1").innerHTML= "Gender: "+ele[i].value;
+                    document.getElementById("result1").innerHTML=ele[i].value;
                 }
                 const button= document.querySelector('#button');
                 var lang1= document.getElementById("java");
@@ -39,48 +49,58 @@
                     count+=1;
                 }
                 if(count==0) {
-                return document.getElementById("result").innerHTML= "Select any one";
+                return document.getElementById("result").innerHTML= "No skills";
                 }
-                return document.getElementById("result").innerHTML= "You have selected " + result + " language";
+                return document.getElementById("result").innerHTML= "Skills are :" + result;
             }
         </script>
-        <div class="rt">
-            <p id="p1"></p>
-            <p id="p2"></p>
-            <p id="result1"></p>
-            <p id= "result"></p>
-        </div>
+        <table class="rt" border="1">
+            <form class="rt">
+                <tr><th>Description</th><th>Image</th></tr>
+                <tr><td>
+                    <p id="p1"></p>
+                    <p id="p2"></p>
+                    <p id="result1"></p>
+                    <p id= "result"></p>
+                </td>
+            <td>
+                <p id="imageContainer" ></p>
+            </td></tr>
+            </form>
+        </table>
         <table>
-            <form class="form">
+            <form class="form" >
                 <div class="vertical"></div>
-                <tr><td>Name:</td><td><input type="text" id="name1" required
+                <tr><td>Name:</td><td><input type="text" id="name1" 
+                required
                 autofocus
                 pattern="[a-zA-Z]+"
                 maxlength="15"/></td></tr>
                 <br>
                 <br>
-                <tr><td>Email:</td><td><input type="email" id="email1"/></td></tr>
+                <tr><td>Email:</td><td><input type="email" id="email1" 
+                required/></td></tr>
                 <br>
                 <br>
+                <tr><td>Image Link:</td><td><input type="text" id="imageUrl" /></td></tr>
                 <tr><td>Gender:</td><td><input type="radio" id="Male" name="Gender" value="Male"/>
                 <label for="Male">Male</label>
                 <input type="radio" id="Female" name="Gender" value="Female"/>
                 <label for="Female">Female</label>
-                <input type="radio" id="Other" name="Gender" value="Other"/>
-                <label for="Other">Other</label></td></tr>
                 <br>
                 <br>
                 <tr><td>Skills:</td><td>
-                <input type="checkbox" id="java" name="language" value="java">
+                <input type="checkbox" id="java" name="language" value="JAVA">
                 <label for="java">Java</label><br>
-                <input type="checkbox" id="html" name="language" value="html">
+                <input type="checkbox" id="html" name="language" value="HTML">
                 <label for="html">HTML</label><br>
-                <input type="checkbox" id="css" name="language" value="css">
+                <input type="checkbox" id="css" name="language" value="CSS">
                 <label for="css">CSS</label><br><br>
                 <tr><td><input type="button" value="Enroll Student" onclick="myFunction()"/></td>
                 <td><input type="reset" value="Reset"/></td></tr>
+                <tr><p style="color: red;">*Make sure you are uploading passport size photo link!!</p></tr>
             </form>
         </table>
-    
+        
     </body>
 </html>

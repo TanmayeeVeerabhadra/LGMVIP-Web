@@ -4,28 +4,28 @@
     background: fixed;
     background-color:rgb(73, 231, 178);
     font-size:70px;
+    margin-top: 20px;
 }
 .rt{
     float: right;
-    padding-right: 100px;
-    padding-top: 100px;
+    margin-right: 90px;
+    margin-top: 80px;
+    background-color: rgb(184, 209, 235);
+    position: relative;
 }
-canvas {
-    height: 175px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-  }
 .form{
     padding-top:8px;
     padding-left: 50px;
     float: left;
+    position:fixed;
 }
 .vertical {
     border-left: 6px solid rgb(73, 231, 178);
     height: 440px;
     position:absolute;
     left: 50%;
+    position: fixed;
+    display: block;
 }
 html{
     background-color: blanchedalmond;
