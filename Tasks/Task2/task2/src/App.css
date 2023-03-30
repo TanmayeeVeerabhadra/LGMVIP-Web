@@ -1,0 +1,32 @@
+.cta{
+  margin-top: 20px;
+  margin-left: 43%;
+  border-radius: 4px;
+  border: 3px solid rgb(72, 49, 7);
+  background-color: rgb(114, 127, 244);
+  font-family: 'Times New Roman', Times, serif;
+}
+.cta:hover{
+  background-color:greenyellow;
+}
+h2,h3{
+  margin-left: 33%;
+  color: rgb(68, 2, 2);
+}
+.card{
+margin-left: 33%;
+}
+ul{
+  list-style-type: square;
+}
+li{
+  font-size:x-large;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+body{
+  background-image:rgb(218, 118, 118);
+}
+html{
+  background-color: beige;
+}
